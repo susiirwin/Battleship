@@ -21,7 +21,7 @@ class BattleshipTest < Minitest::Test
 
     assert_respond_to game, :instructions
   end
-  
+
   def test_it_starts_the_game_when_player_types_p
     skip
     game = Battleship.new
@@ -32,20 +32,5 @@ class BattleshipTest < Minitest::Test
   end
 
 
-  def test_it_starts_the_game_when_player_types_play
-    skip
-  end
-
-  def test_it_gets_ship_layout_from_user
-    skip
-  end
-
-  def test_it_displays_instructions_when_player_types_i
-    skip
-  end
-
-  def test_it_displays_instructions_when_player_types_instructions
-    skip
-  end
-
+  
 end

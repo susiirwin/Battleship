@@ -1,5 +1,4 @@
 class Battleship
-
   def greeting
     "Welcome to BATTLESHIP"
   end
@@ -23,5 +22,4 @@ class Battleship
     input = "q"
     "quit the game"
   end
-
 end

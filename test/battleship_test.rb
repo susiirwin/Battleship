@@ -8,6 +8,11 @@ class BattleshipTest < Minitest::Test
     assert_equal expected, game.greeting
   end
 
+  def test_it_can_get_input_and_store_it
+    game = Battleship.new
+    assert_equal "input", game.get_path
+  end
+
   def test_it_shows_instructions_if_i_is_input
     game = Battleship.new
     input = "i"

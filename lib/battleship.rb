@@ -10,10 +10,12 @@ class Battleship
 
   def instructions
     #needs to load file 'instructions.txt and print them to the screen'
-    #also needs to include the Battleship.greeting 
+    #also needs to include the Battleship.greeting
   end
 
 end
+
+
 
 # This section runs the game from the terminal command:
 # game = Battleship.new

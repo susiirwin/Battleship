@@ -14,6 +14,7 @@ class BattleshipTest < Minitest::Test
     game = Battleship.new
 
     assert_respond_to game, :play
+
   end
 
   def test_it_can_give_instructions
@@ -32,5 +33,5 @@ class BattleshipTest < Minitest::Test
   end
 
 
-  
+
 end

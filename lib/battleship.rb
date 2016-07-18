@@ -1,3 +1,6 @@
+require './lib/gameboard'
+require './lib/player'
+
 class Battleship
   attr_reader :input
 
@@ -15,24 +18,11 @@ class Battleship
   end
 
   def play
-  "  I have laid out my ships on the grid.
-  You now need to layout your two ships.
-  The first is two units long and the
-  second is three units long.
-  The grid has A1 at the top left and D4 at the bottom right."
-
-  end
-
-  def get_starting_coordinates_two_ship
-    puts "Enter the squares for the two-unit ship: "
-    @starting_coordinates_two = gets.chomp
-    "Thanks."
-  end
-
-  def get_starting_coordinates_three_ship
-    puts "Enter the squares for the three-unit ship: "
-    @starting_coordinates_three = gets.chomp
-    "Thank you."
+    " I have laid out my ships on the grid.\n
+      You now need to layout your two ships.\n
+      The first is two units long and the\n
+      second is three units long.\n
+      The grid has A1 at the top left and D4 at the bottom right."
   end
 
   def fire
@@ -43,32 +33,21 @@ class Battleship
     #report back the result (H or M)
     #needs to store a record of all shots fired and count them
   end
-
-  def draw_board #need to add labels here
-    puts "==========="
-    @board = Hash.new
-    (1..4).each do |num|
-      ("A".."D").each do |letter|
-        @board["#{num}#{letter}"] = "- "
-        print @board["#{num}#{letter}"]
-      end
-      puts
-    end
-    puts "==========="
-  end
-
 end
 
 battleship = Battleship.new
+board = Gameboard.new
+player = Player.new("Susi")
 puts battleship.greeting
 while battleship.get_path != "q"
   if battleship.input == "i"
   puts battleship.instructions
 elsif battleship.input == "p"
   puts battleship.play
-  puts battleship.get_starting_coordinates_two_ship
-  puts battleship.get_starting_coordinates_three_ship
-  puts battleship.fire
-  battleship.draw_board
+  puts player.get_starting_coordinates_two_ship
+  puts player.get_starting_coordinates_three_ship
+  battleship.fire
+  board.draw_board
+
   end
 end

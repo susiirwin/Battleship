@@ -38,11 +38,24 @@ class Battleship
   def fire
     puts "Enter the square you would like to fire upon: "
     @fire_coordinates = gets.chomp
+    "Shot fired."
     #check with other grid and see if this space is empty or occupied
     #report back the result (H or M)
     #needs to store a record of all shots fired and count them
   end
 
+  def draw_board #need to add labels here
+    puts "==========="
+    @board = Hash.new
+    (1..4).each do |num|
+      ("A".."D").each do |letter|
+        @board["#{num}#{letter}"] = "- "
+        print @board["#{num}#{letter}"]
+      end
+      puts
+    end
+    puts "==========="
+  end
 
 end
 
@@ -56,5 +69,6 @@ elsif battleship.input == "p"
   puts battleship.get_starting_coordinates_two_ship
   puts battleship.get_starting_coordinates_three_ship
   puts battleship.fire
+  battleship.draw_board
   end
 end

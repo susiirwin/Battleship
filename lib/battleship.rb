@@ -11,7 +11,7 @@ class Battleship
   end
 
   def instructions
-    "You have 2 ships. Place them. Hit Your Opponent's Ships. Win the game."
+    "You have 2 ships. Place them. Hit Your Opponent's Ships. Sink them. Win the game."
   end
 
   def play
@@ -20,7 +20,29 @@ class Battleship
   The first is two units long and the
   second is three units long.
   The grid has A1 at the top left and D4 at the bottom right."
+
   end
+
+  def get_starting_coordinates_two_ship
+    puts "Enter the squares for the two-unit ship: "
+    @starting_coordinates_two = gets.chomp
+    "Thanks."
+  end
+
+  def get_starting_coordinates_three_ship
+    puts "Enter the squares for the three-unit ship: "
+    @starting_coordinates_three = gets.chomp
+    "Thank you."
+  end
+
+  def fire
+    puts "Enter the square you would like to fire upon: "
+    @fire_coordinates = gets.chomp
+    #check with other grid and see if this space is empty or occupied
+    #report back the result (H or M)
+    #needs to store a record of all shots fired and count them
+  end
+
 
 end
 
@@ -31,5 +53,8 @@ while battleship.get_path != "q"
   puts battleship.instructions
 elsif battleship.input == "p"
   puts battleship.play
+  puts battleship.get_starting_coordinates_two_ship
+  puts battleship.get_starting_coordinates_three_ship
+  puts battleship.fire
   end
 end

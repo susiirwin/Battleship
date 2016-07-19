@@ -2,50 +2,33 @@ require './test/test_helper'
 require './lib/battleship'
 
 class BattleshipTest < Minitest::Test
-  def test_it_greets_the_user_and_asks_for_a_play_path
+  def test_it_greets_the_user
     game = Battleship.new
-
-    expected = "Welcome to BATTLESHIP\nWould you like to (p)lay, read the (i)nstructions, or (q)uit?"
-
+    expected = "Welcome to BATTLESHIP"
     assert_equal expected, game.greeting
   end
 
-  def test_it_can_play
+  def test_it_can_get_input_and_store_it
     game = Battleship.new
-
-    assert_respond_to game, :play
+    assert_equal "input", game.get_path
   end
 
-  def test_it_can_give_instructions
+  def test_it_shows_instructions_if_i_is_input
     game = Battleship.new
-
-    assert_respond_to game, :instructions
+    input = "i"
+    assert_equal "You have 2 ships. Place them. Hit Your Opponent's Ships. Sink them. Win the game.", game.instructions
   end
-  
-  def test_it_starts_the_game_when_player_types_p
-    skip
+
+  def test_it_shows_play_if_p_is_input
     game = Battleship.new
+    input = "p"
 
-    path_choice.answer = "p"
-
-    assert_equal "you are playing the game", game.user_choice
-  end
-
-
-  def test_it_starts_the_game_when_player_types_play
-    skip
-  end
-
-  def test_it_gets_ship_layout_from_user
-    skip
-  end
-
-  def test_it_displays_instructions_when_player_types_i
-    skip
-  end
-
-  def test_it_displays_instructions_when_player_types_instructions
-    skip
+    expected = "     I have laid out my ships on the grid.
+      You now need to layout your two ships.
+      The first is two units long and the
+      second is three units long.
+      The grid has A1 at the top left and D4 at the bottom right."
+    assert_equal expected, game.play
   end
 
 end

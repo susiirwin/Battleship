@@ -2,15 +2,13 @@ require './test/test_helper'
 require './lib/computer'
 
 class ComputerTest < Minitest::Test
-  def test_it_can_place_a_ship
+  def test_it_can_create_an_empty_hash
     computer = Computer.new
-
-    assert_equal "ship placed", computer.place_ship
+    assert_equal({}, computer.ship_place)
   end
 
-  def test_it_places_ship_randomly
+  def test_it_can_add_to_the_hash
     computer = Computer.new
-
-    assert_equal "random", computer.place_randomly
+    assert_equal( , )
   end
 end

@@ -5,6 +5,7 @@ class Gameboard
     @board
     @shots
 
+
   end
 
   def draw_board #need to add labels here
@@ -21,9 +22,17 @@ class Gameboard
   end
 
   # Positions in a hash written out
-  # {"a1"=>"*", "a2"=>"*", "a3"=>"*", "a4"=>"*",
-  #  "b1"=>"*", "b2"=>"*", "b3"=>"*", "b4"=>"*",
-  #  "c1"=>"*", "c2"=>"*", "c3"=>"*", "c4"=>"*",
-  #  "d1"=>"*", "d2"=>"*", "d3"=>"*", "d4"=>"*"}
+  # def positions
+    # {"A1"=>"*", "A2"=>"*", "A3"=>"*", "A4"=>"*",
+    #  "B1"=>"*", "B2"=>"*", "B3"=>"*", "B4"=>"*",
+    #  "C1"=>"*", "C2"=>"*", "C3"=>"*", "C4"=>"*",
+    #  "D1"=>"*", "D2"=>"*", "D3"=>"*", "D4"=>"*"}
+  # end
 
+  def update_square
+    #needs to get input from plyer.shot and change the square to H or N
+    # if boat is there, show an H
+    # else, put an M
+    "H"
+  end
 end

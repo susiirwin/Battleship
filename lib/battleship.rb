@@ -18,17 +18,17 @@ class Battleship
   end
 
   def play
-    " I have laid out my ships on the grid.\n
-      You now need to layout your two ships.\n
-      The first is two units long and the\n
-      second is three units long.\n
+    "      I have laid out my ships on the grid.
+      You now need to layout your two ships.
+      The first is two units long and the
+      second is three units long.
       The grid has A1 at the top left and D4 at the bottom right."
   end
 
   def fire
     puts "Enter the square you would like to fire upon: "
     @fire_coordinates = gets.chomp
-    "Shot fired."
+    puts "Shot fired!"
     #check with other grid and see if this space is empty or occupied
     #report back the result (H or M)
     #needs to store a record of all shots fired and count them

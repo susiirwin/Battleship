@@ -2,15 +2,14 @@ require './test/test_helper'
 require './lib/gameboard'
 
 class GameboardTest < Minitest::Test
-  def test_it_creates_a_new_board
+
+  def test_it_has_positions
     board = Gameboard.new
-    assert_equal nil, board.draw_board
+    expected = ["A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4"]
+
+    assert_equal expected, board.positions
   end
 
-  def test_it_can_update_a_key_with_an_H
-    board = Gameboard.new
-
-    assert_equal "H", board.update_square
-  end
+  
 
 end

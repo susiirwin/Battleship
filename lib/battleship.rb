@@ -37,7 +37,10 @@ end
 
 battleship = Battleship.new
 board = Gameboard.new
+board.get_random_two_positions
+board.get_random_three_positions
 player = Player.new("Susi")
+require 'pry'; binding.pry
 puts battleship.greeting
 while battleship.get_path != "q"
   if battleship.input == "i"
@@ -48,8 +51,8 @@ elsif battleship.input == "p"
   puts player.get_starting_coordinates_three_ship
 
   battleship.fire
-  
-  board.draw_board
+
+
 
   end
 end

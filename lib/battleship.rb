@@ -46,7 +46,9 @@ elsif battleship.input == "p"
   puts battleship.play
   puts player.get_starting_coordinates_two_ship
   puts player.get_starting_coordinates_three_ship
+
   battleship.fire
+  
   board.draw_board
 
   end

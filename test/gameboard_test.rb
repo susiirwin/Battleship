@@ -7,7 +7,7 @@ class GameboardTest < Minitest::Test
     assert_equal nil, board.draw_board
   end
 
-  def test_it_can_take_a_value_and_update_a_key_with_an_H
+  def test_it_can_update_a_key_with_an_H
     board = Gameboard.new
 
     assert_equal "H", board.update_square

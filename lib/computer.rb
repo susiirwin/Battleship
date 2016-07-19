@@ -5,11 +5,13 @@ class Computer
     @ship_place = Hash.new
   end
 
-  def place_ship
-    ship_1[]
+  def place_2_ship_horizontally
+    puts "What are you two coordinates? >"
+    coordinates = gets.chomp.chars
+    @ship_place[1] = coordinates[0]
+
+
   end
 
-  def place_randomly
-    "random"
-  end
+
 end

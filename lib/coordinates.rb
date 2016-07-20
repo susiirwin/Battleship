@@ -28,7 +28,7 @@ class Coordinates
   end
 
   def self.random_coordinate_generator
-    location = coordinate_matcher.keys.sample
+    location = coordinate_matcher.keys.sample(2)
     translate(location)
   end
 

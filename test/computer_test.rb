@@ -18,7 +18,7 @@ class ComputerTest < Minitest::Test
     first_unit = "B2"
 
     ship_unit = computer.generate_second_unit(first_unit)
-    
+
   end
 
 end

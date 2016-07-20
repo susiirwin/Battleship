@@ -1,58 +1,43 @@
-require './lib/gameboard'
-require './lib/player'
+require './lib/messages'
 
 class Battleship
-  attr_reader :input
+  attr_reader :messages
 
-  def greeting
-    "Welcome to BATTLESHIP"
+  def initialize
+    @messages = Messages.new
   end
 
-  def get_path
-    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
-    @input = gets.chomp
+  def welcome
+    messages.greeting
+    get_user_input
   end
 
-  def instructions
-    "You have 2 ships. Place them. Hit Your Opponent's Ships. Sink them. Win the game."
+  def get_user_input
+    user_input = gets.chomp.to_s.downcase
+    game_manager(user_input)
   end
 
-  def play
-    "      I have laid out my ships on the grid.
-      You now need to layout your two ships.
-      The first is two units long and the
-      second is three units long.
-      The grid has A1 at the top left and D4 at the bottom right."
+  def instructions_welcome
+    messages.instructions
+    get_user_input
   end
 
-  def fire
-    puts "Enter the square you would like to fire upon: "
-    @fire_coordinates = gets.chomp
-    puts "Shot fired!"
-    #check with other grid and see if this space is empty or occupied
-    #report back the result (H or M)
-    #needs to store a record of all shots fired and count them
+  def error_welcome
+    messages.error
+    get_user_input
   end
-end
 
-battleship = Battleship.new
-board = Gameboard.new
-board.get_random_two_positions
-board.get_random_three_positions
-player = Player.new("Susi")
-require 'pry'; binding.pry
-puts battleship.greeting
-while battleship.get_path != "q"
-  if battleship.input == "i"
-  puts battleship.instructions
-elsif battleship.input == "p"
-  puts battleship.play
-  puts player.get_starting_coordinates_two_ship
-  puts player.get_starting_coordinates_three_ship
-
-  battleship.fire
-
-
-
+  def game_manager(user_input)
+    if user_input == 'p' || user_input == 'play'
+      #go to play sequence
+    elsif user_input == 'i' || user_input == 'instructions'
+      instructions_welcome
+    elsif user_input == 'q' || user_input == 'quit'
+      messages.quit
+    else
+      error_welcome
+    end
   end
 end
+
+Battleship.new.welcome

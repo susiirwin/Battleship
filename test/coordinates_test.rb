@@ -42,17 +42,4 @@ class CoordinatesTest < Minitest::Test
     assert_equal [[0,0],[1,0],[2,0]], ship_location
   end
 
-  # def test_it_can_grab_a_random_key
-  #   not sure how to test a random method
-  #
-  # end
-
-  # def test_it_can_create_one_random_coordinate
-  #   skip
-  #   coordinate1 = Coordinates.random_coordinate_generator
-  #   #i need it to get a random key from the hash
-  #
-  #
-  #   assert_equal_to , coordinate1.random_coordinate_generator
-  # end
 end

@@ -49,5 +49,3 @@ class GameBoard
   end
 
 end
-
-puts GameBoard.new.add_line_breaks_to_board

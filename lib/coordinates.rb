@@ -31,23 +31,4 @@ class Coordinates
     location = coordinate_matcher.keys.sample(2)
     translate(location)
   end
-
-  ### generate a random first coordinate using coordinate_generator assign it to a variable
-  ### get the value of that new variable
-  ### create a second random coordinate using coordinate_generator
-
-  #look into using recursion - call a method on itself until a certain conditional is met
-      ### it cannot equal the first
-      # if location2 == location1 (overlap?)
-        #get a new location2: random_coordinate_generator again
-      # elsif location2 is not next to location1? (adjacent?)
-        #get a new location2: random_coordinate_generator again
-      # elsif (wrap board?)
-        #get a new location2: random_coordinate_generator again
-      # elsif (right length?)
-        #get a new location2: random_coordinate_generator again
-
-
-
-
 end

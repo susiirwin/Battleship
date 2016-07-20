@@ -5,7 +5,6 @@ class GameBoard
     @size = size
     @gameboard = generate_gameboard
     @stored_shots = []
-
   end
 
   def generate_line
@@ -18,6 +17,15 @@ class GameBoard
     @size.times.map do
       generate_line
     end
+  end
+
+  def add_line_breaks_to_board
+    board_array = []
+    @gameboard.each do |line_array|
+      board_array << line_array.join(" ")
+      board_array << "\n"
+    end
+    board_array.join('')
   end
 
   def record_shot(y,x)
@@ -41,3 +49,5 @@ class GameBoard
   end
 
 end
+
+puts GameBoard.new.add_line_breaks_to_board

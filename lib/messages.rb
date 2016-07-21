@@ -13,11 +13,11 @@ class Messages
   end
 
   def quit
-    "Thanks for playing!"
+    puts "Thanks for playing!"
   end
 
   def computer_play
-    "I have laid out my ships on the grid.
+    puts "I have laid out my ships on the grid.
     You now need to layout your two ships.
     The first is two units long and the
     second is three units long.

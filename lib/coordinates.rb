@@ -31,4 +31,27 @@ class Coordinates
     location = coordinate_matcher.keys.sample(2)
     translate(location)
   end
+
+  def self.first_random_ship_coordinate
+    random1 = [*0..3].sample
+    random2 = [*0..3].sample
+    first_ship_coordinate = [random1, random2]
+  end
+
+  def self.second_ship_space_x(first_ship_coordinate)
+    if first_ship_coordinate[0] = 0
+      second_ship_y_space1[0] = 0 || second_ship_y_space1[0] = 1
+    elsif first_ship_coordinate[0] = 1
+      second_ship_y_space1[0] != 3
+    elsif first_ship_coordinate[0] = 2
+      second_ship_y_space1[0] != 0
+    elsif first_ship_coordinate[0] = 3
+      second_ship_y_space1[0] = 2 || second_ship_y_space1[0] = 3
+    else
+      second_ship_y_space[0]
+    end
+    require 'pry'; binding.pry
+    new_space = [first_ship_coordinate][second_ship_y_space[0]]
+  end
+
 end

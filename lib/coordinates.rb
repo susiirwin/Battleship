@@ -38,9 +38,8 @@ class Coordinates
     first_ship_coordinate = [random1, random2]
   end
 
-  def self.second_ship_space_x(first_ship_coordinate)
-    second_ship_space_x = []
-    new_space = []
+  def self.second_ship_space_y(first_ship_coordinate)
+    second_ship_space_y = []
     if first_ship_coordinate[0] == 0
       second_ship_y_space1[0] = 0 || second_ship_y_space1[0] = 1
     elsif first_ship_coordinate[0] == 1
@@ -50,9 +49,9 @@ class Coordinates
     elsif first_ship_coordinate[0] == 3
       second_ship_y_space1[0] = 2 || second_ship_y_space1[0] = 3
     else
-      second_ship_space_x << second_ship_y_space1[0]
+      second_ship_space_y << second_ship_y_space1[0]
     end
-    new_space = [[first_ship_coordinate],[second_ship_space_x]]
+    new_space = [[first_ship_coordinate],[second_ship_space_y]]
   end
 
 end

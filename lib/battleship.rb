@@ -29,7 +29,7 @@ class Battleship
 
   def game_manager(user_input)
     if user_input == 'p' || user_input == 'play'
-      #go to play sequence
+      messages.computer_play
     elsif user_input == 'i' || user_input == 'instructions'
       instructions_welcome
     elsif user_input == 'q' || user_input == 'quit'

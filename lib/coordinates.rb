@@ -39,19 +39,20 @@ class Coordinates
   end
 
   def self.second_ship_space_x(first_ship_coordinate)
-    if first_ship_coordinate[0] = 0
+    second_ship_space_x = []
+    new_space = []
+    if first_ship_coordinate[0] == 0
       second_ship_y_space1[0] = 0 || second_ship_y_space1[0] = 1
-    elsif first_ship_coordinate[0] = 1
+    elsif first_ship_coordinate[0] == 1
       second_ship_y_space1[0] != 3
-    elsif first_ship_coordinate[0] = 2
+    elsif first_ship_coordinate[0] == 2
       second_ship_y_space1[0] != 0
-    elsif first_ship_coordinate[0] = 3
+    elsif first_ship_coordinate[0] == 3
       second_ship_y_space1[0] = 2 || second_ship_y_space1[0] = 3
     else
-      second_ship_y_space[0]
+      second_ship_space_x << second_ship_y_space1[0]
     end
-    require 'pry'; binding.pry
-    new_space = [first_ship_coordinate][second_ship_y_space[0]]
+    new_space = [[first_ship_coordinate],[second_ship_space_x]]
   end
 
 end

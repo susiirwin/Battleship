@@ -8,7 +8,6 @@ class ComputerTest < Minitest::Test
     ship_coordinate = computer.generate_first_unit
     letter_options = ["A", "B", "C", "D"]
     number_options = ["1", "2", "3", "4"]
-    # assuming it looks something like..."A1"
     assert letter_options.include?(ship_unit[0])
     assert number_options.include?(ship_unit[1])
   end
